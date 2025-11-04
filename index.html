@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Jesse Kavadlo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Official website of Jesse Kavadlo">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Jesse Kavadlo</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#writing">Writing</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>Placeholder text for the About section.</p>
+        </section>
+
+        <section id="writing">
+            <h2>Writing</h2>
+            <p>Placeholder text for the Writing section.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Jesse Kavadlo</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
