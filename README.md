@@ -1,1 +1,1 @@
-# https://jessekavadlo.github.io
+# https://jessekavadlo.com/
