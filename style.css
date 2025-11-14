@@ -16,17 +16,33 @@
     padding: 0
 }
 
+html {
+    scroll-behavior: smooth;
+    background:
+        radial-gradient(circle at top center,
+            rgba(200, 16, 46, 0.04) 0%,
+            rgba(200, 16, 46, 0.025) 12%,
+            rgba(200, 16, 46, 0.01) 25%,
+            rgba(200, 16, 46, 0) 40%),
+        linear-gradient(180deg,
+            #f9fafc 0%,
+            #f8f9fb 20%,
+            #f6f7fb 45%,
+            #f4f6fa 70%,
+            #f9fafc 100%);
+}
+
 html,
 body {
     height: 100%
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, Segoe UI, Roboto, Helvetica, Arial;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: transparent;
     color: var(--ink);
-    background: var(--bg);
-    line-height: 1.65;
-    font-size: 16px
+    line-height: 1.6;
+    font-size: 16px;
 }
 
 img {
@@ -95,7 +111,12 @@ a:hover {
 }
 
 .hero-bg {
-    --overlay: linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, .15) 40%, rgba(219, 146, 146, 0) 100%);
+    --overlay: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.35) 0%,
+            rgba(255, 255, 255, 0.22) 25%,
+            rgba(255, 255, 255, 0.12) 50%,
+            rgba(240, 240, 240, 0.1) 70%,
+            rgba(255, 255, 255, 0) 100%);
     background-image: var(--overlay), var(--hero-img);
     background-size: cover;
     background-repeat: no-repeat;
@@ -209,15 +230,33 @@ a:hover {
     padding-bottom: 30px;
 }
 
-.about-image img {
+.about-image {
     border-radius: var(--radius);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, .12);
+    box-shadow: 0 8px 20px rgba(0 0 0 0.08);
+    background: var(--paper);
+    overflow: hidden;
+    padding: 0;
+}
+
+.about-photo {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 .about-image figcaption {
-    font-size: .9rem;
+    padding: 0.75rem 0.5rem 1rem;
+    font-size: 0.9rem;
     color: var(--muted);
-    margin-top: .4rem;
+    text-align: center;
 }
 
 
@@ -312,6 +351,34 @@ a:hover {
     margin-top: 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--line);
+}
+
+.band-card {
+    background: var(--paper);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 20px rgba(0 0 0 0.08);
+    overflow: hidden;
+}
+
+.band-card figcaption {
+    padding: 0.75rem 0.5rem 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.band-photo {
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+}
+
+.band-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 .link-row {
@@ -469,7 +536,6 @@ a:hover {
     background: var(--paper);
     border-top: 1px solid var(--line);
     text-align: center;
-    padding: 1.4rem 0;
     color: var(--muted)
 }
 
