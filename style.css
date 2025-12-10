@@ -113,33 +113,43 @@ a:hover {
 /* Hero */
 .hero {
     position: relative;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line)
+    background: #000;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
 }
 
+/* hero background image with dark overlay layered behind content */
 .hero-bg {
-    --overlay: linear-gradient(180deg,
-            rgba(255, 255, 255, 0.35) 0%,
-            rgba(255, 255, 255, 0.22) 25%,
-            rgba(255, 255, 255, 0.12) 50%,
-            rgba(240, 240, 240, 0.1) 70%,
-            rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    --overlay: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.70) 0%,
+            rgba(0, 0, 0, 0.70) 100%);
+
+    background-color: #000;
     background-image: var(--overlay), var(--hero-img);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom;
-    height: 150px;
+    background-position: center top;
 }
 
+/* content sits on top of the background */
 .hero-inner {
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    max-width: var(--wrap);
     margin: 0 auto;
-    padding: 3rem 1rem;
-    margin-top: -92px
+    padding: 5rem 1rem 3rem;
+    /* adjust to taste */
 }
 
 .hero-fixed {
@@ -167,18 +177,19 @@ a:hover {
 
 .title {
     font-size: 2rem;
-    margin-top: .9rem
+    margin-top: .9rem;
+    color: var(--paper);
 }
 
 .subtitle {
-    color: var(--muted);
+    color: var(--paper);
     margin-top: .25rem
 }
 
 .availability {
     margin-top: 0.3rem;
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--paper);
     letter-spacing: 0.1px;
 }
 
