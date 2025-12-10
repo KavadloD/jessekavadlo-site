@@ -125,8 +125,8 @@ a:hover {
     z-index: 0;
 
     --overlay: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.70) 0%,
-            rgba(0, 0, 0, 0.70) 100%);
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.85) 100%);
 
     background-color: #000;
     background-image: var(--overlay), var(--hero-img);
