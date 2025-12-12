@@ -135,6 +135,8 @@ a:hover {
     background-position: center top;
 }
 
+
+
 /* content sits on top of the background */
 .hero-inner {
     position: relative;
@@ -158,6 +160,8 @@ a:hover {
     left: 0;
     width: 100%;
     z-index: 0;
+    transform: translateZ(0);
+    will-change: transform;
     /* behind the main content */
 }
 

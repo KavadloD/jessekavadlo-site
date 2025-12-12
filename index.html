@@ -492,61 +492,41 @@
         </div>
     </footer>
 
-    <script>
-        // Year in footer
-        const yearEl = document.getElementById('year');
-        if (yearEl) {
-            yearEl.textContent = new Date().getFullYear();
-        }
+<script>
+    const hero = document.querySelector('.hero');
 
-        // Tabs highlight on scroll
-        const tabs = [...document.querySelectorAll('.tabs .tab')];
-        const ids = tabs.map(a => a.getAttribute('href'));
-        const els = ids.map(id => document.querySelector(id));
+    if (hero) {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'hero-placeholder';
+        hero.insertAdjacentElement('afterend', placeholder);
 
-        function onScrollTabs() {
-            const y = window.scrollY + 120;
-            let active = 0;
-            els.forEach((el, i) => {
-                if (el && el.offsetTop <= y) active = i;
-            });
-            tabs.forEach(t => t.classList.remove('is-active'));
-            if (tabs[active]) {
-                tabs[active].classList.add('is-active');
+        function handleHeroScroll() {
+            const heroHeight = hero.offsetHeight;
+
+            // Always reserve space so nothing jumps
+            placeholder.style.height = heroHeight + 'px';
+
+            // Keep hero fixed at all times
+            hero.classList.add('hero-fixed');
+
+            // Slide it away after you've scrolled past it
+            if (window.scrollY >= heroHeight) {
+                hero.style.transform = 'translateY(-' + heroHeight + 'px)';
+            } else {
+                hero.style.transform = 'translateY(0px)';
             }
         }
 
-        document.addEventListener('scroll', onScrollTabs, { passive: true });
-        onScrollTabs();
+        document.addEventListener('scroll', handleHeroScroll, { passive: true });
+        window.addEventListener('resize', handleHeroScroll);
+        handleHeroScroll();
+    }
+</script>
 
-        // Hero scroll effect: content slides over hero for a bit,
-        // then hero scrolls away and is no longer visible
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            const placeholder = document.createElement('div');
-            placeholder.className = 'hero-placeholder';
-            hero.insertAdjacentElement('afterend', placeholder);
-
-            function handleHeroScroll() {
-                const heroHeight = hero.offsetHeight;
-
-                // While you are within the hero height, keep it fixed behind content
-                if (window.scrollY > 0 && window.scrollY < heroHeight) {
-                    hero.classList.add('hero-fixed');
-                    placeholder.style.height = heroHeight + 'px';
-                } else {
-                    // At the very top or once you scroll past the hero height,
-                    // let it behave normally so it is not visible under the page
-                    hero.classList.remove('hero-fixed');
-                    placeholder.style.height = '0px';
-                }
-            }
-
-            document.addEventListener('scroll', handleHeroScroll, { passive: true });
-            window.addEventListener('resize', handleHeroScroll);
-            handleHeroScroll();
-        }
-    </script>
+<script>
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 
