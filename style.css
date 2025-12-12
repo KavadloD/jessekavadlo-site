@@ -304,14 +304,11 @@ a:hover {
 }
 
 .about-video iframe {
-    max-height: 560px;
-}
-
-/* Force vertical aspect ratio */
-.about-video iframe {
     width: 100%;
     aspect-ratio: 9 / 16;
+    max-height: 560px;
     border: none;
+    display: block;
 }
 
 
@@ -603,42 +600,6 @@ a:hover {
     box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .hero-bg {
-        height: 240px;
-    }
-
-    .hero-inner {
-        padding: 2.5rem 1rem;
-        margin-top: -80px;
-    }
-
-    .about-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .media-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Books stack nicely on smaller screens */
-    .book {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .book-cover {
-        flex: 0 0 auto;
-        max-width: 190px;
-    }
-
-    /* Podcast grid is already a column with flex,
-       this just tightens spacing a bit on tablets */
-    .podcast-card {
-        padding: 1.25rem;
-    }
-}
 
 .section {
     border-left: 4px solid rgba(200, 16, 46, 0.08);
@@ -646,22 +607,14 @@ a:hover {
     border-radius: 6px;
 }
 
+@media (max-width: 900px) {
+    .hero-inner {
+        padding: 6rem 1rem 6rem;
+    }
+}
 
 @media (max-width: 600px) {
     .hero-inner {
-        margin-top: -82px;
-    }
-
-    .title {
-        font-size: 1.65rem;
-    }
-
-    .wrap {
-        padding: 1.5rem 1rem;
-    }
-
-    .social a {
-        width: 36px;
-        height: 36px;
+        padding: 5rem 1rem 5rem;
     }
 }
