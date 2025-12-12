@@ -7,7 +7,16 @@
     <title>Jesse Kavadlo, Ph.D.</title>
     <meta name="description" content="Professor, writer, performer." />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin />
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin />
+    <link rel="dns-prefetch" href="https://www.facebook.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+
+    <link rel="preconnect" href="https://embed.podcasts.apple.com" crossorigin />
+    <link rel="dns-prefetch" href="https://embed.podcasts.apple.com" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -106,13 +115,25 @@
                             Narrative, and more.
                         </p>
                     </div>
-                    <figure class="about-image hover-lift">
-                        <div class="about-photo">
-                            <img src="assets/pictures/helping student.jpeg" alt="Jesse Kavadlo speaking at an event">
-                        </div>
-                        <figcaption>Jesse Kavadlo teching at Maryville University.</figcaption>
-                    </figure>
 
+                    <div class="about-side">
+                        <figure class="about-image hover-lift">
+                            <div class="about-photo">
+                                <img src="assets/pictures/helping student.jpeg" alt="Jesse Kavadlo speaking at an event">
+                            </div>
+                            <figcaption>Jesse Kavadlo teaching at Maryville University.</figcaption>
+                        </figure>
+
+                        <div class="about-video hover-lift">
+                            <iframe
+                                src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/jesse.kavadlo/videos/1288514565135940/&show_text=false"
+                                allowfullscreen="true" scrolling="no" frameborder="0">
+                            </iframe>
+                            <p style="padding: 0.75rem 0.5rem 1rem; font-size: 0.9rem; color: var(--muted); text-align: center;">
+                                Jesse Kavadlo performing the solo from Wanted Dead or Alive with Top Gunz.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Band block now sits AFTER the paragraph and image -->

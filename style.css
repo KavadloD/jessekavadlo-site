@@ -291,6 +291,24 @@ a:hover {
     text-align: center;
 }
 
+.about-video {
+    margin-top: 1.25rem;
+    background: var(--paper);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0 0 0 / 0.06);
+}
+
+.about-video iframe {
+    max-height: 560px;
+}
+
+/* Force vertical aspect ratio */
+.about-video iframe {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border: none;
+}
 
 
 /* Band block (stacked) */
